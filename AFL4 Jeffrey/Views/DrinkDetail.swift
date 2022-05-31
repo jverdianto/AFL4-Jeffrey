@@ -24,9 +24,7 @@ struct DrinkDetail: View {
                 .fontWeight(.bold)
                 .padding(20.0)
             
-            SwiftUI.Text(drink.strMeasure1 + drink.strIngredient1)
-            SwiftUI.Text(drink.strMeasure2 + drink.strIngredient2)
-            SwiftUI.Text(drink.strMeasure3 + drink.strIngredient3)
+            SwiftUI.Text(drink.strIngredient1)
             
             SwiftUI.Text("Instructions")
                 .font(.title2)

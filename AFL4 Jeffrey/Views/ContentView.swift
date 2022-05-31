@@ -13,6 +13,7 @@ struct ContentView: View {
     enum Tab {
         case home
         case drinks
+        case ingredients
     }
     
     var body: some View {
@@ -29,6 +30,11 @@ struct ContentView: View {
                     Label("Drinks", systemImage: "takeoutbag.and.cup.and.straw.fill")
                 }
                 .tag(Tab.drinks)
+            IngredientList()
+                .tabItem {
+                    Label("Ingredients", systemImage: "list.bullet")
+                }
+                .tag(Tab.ingredients)
         }
 
     }

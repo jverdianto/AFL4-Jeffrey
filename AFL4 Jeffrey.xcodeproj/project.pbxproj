@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		04663A882845DDE6004DF48C /* Test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04663A872845DDE6004DF48C /* Test2.swift */; };
+		046AA86E28465BAA007AD505 /* IngredientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA86D28465BAA007AD505 /* IngredientList.swift */; };
+		046AA87028465CAE007AD505 /* IngredientDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA86F28465CAE007AD505 /* IngredientDetail.swift */; };
+		046AA87528465DCD007AD505 /* ingredientData.json in Resources */ = {isa = PBXBuildFile; fileRef = 046AA87428465DCD007AD505 /* ingredientData.json */; };
 		046E7388284203F60024E4C1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E7387284203F60024E4C1 /* Home.swift */; };
 		046E738A28420B580024E4C1 /* HomeDrinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E738928420B580024E4C1 /* HomeDrinkRow.swift */; };
 		046E7390284265010024E4C1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E738F284265000024E4C1 /* ViewModel.swift */; };
@@ -47,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		04663A872845DDE6004DF48C /* Test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2.swift; sourceTree = "<group>"; };
+		046AA86D28465BAA007AD505 /* IngredientList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientList.swift; sourceTree = "<group>"; };
+		046AA86F28465CAE007AD505 /* IngredientDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetail.swift; sourceTree = "<group>"; };
+		046AA87428465DCD007AD505 /* ingredientData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ingredientData.json; sourceTree = "<group>"; };
 		046E7387284203F60024E4C1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		046E738928420B580024E4C1 /* HomeDrinkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDrinkRow.swift; sourceTree = "<group>"; };
 		046E738F284265000024E4C1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +168,8 @@
 				04CAE9E12841D42D0013965D /* DrinkRow.swift */,
 				04CAE9EA2841DBFD0013965D /* DrinkList.swift */,
 				04CAE9EC2841DF240013965D /* DrinkDetail.swift */,
+				046AA86D28465BAA007AD505 /* IngredientList.swift */,
+				046AA86F28465CAE007AD505 /* IngredientDetail.swift */,
 				046E7391284265A30024E4C1 /* Test.swift */,
 				04663A872845DDE6004DF48C /* Test2.swift */,
 			);
@@ -183,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				04CAE9E42841D45D0013965D /* drinkData.json */,
+				046AA87428465DCD007AD505 /* ingredientData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -293,6 +302,7 @@
 			files = (
 				04CAE9E52841D45D0013965D /* drinkData.json in Resources */,
 				04CAE9BD2841D3E30013965D /* Preview Assets.xcassets in Resources */,
+				046AA87528465DCD007AD505 /* ingredientData.json in Resources */,
 				04CAE9BA2841D3E30013965D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046AA87028465CAE007AD505 /* IngredientDetail.swift in Sources */,
 				04CAE9B82841D3E20013965D /* ContentView.swift in Sources */,
 				046E739428426F9A0024E4C1 /* Ingredient.swift in Sources */,
 				04CAE9E22841D42D0013965D /* DrinkRow.swift in Sources */,
@@ -326,6 +337,7 @@
 				04CAE9E92841D47D0013965D /* ModelData.swift in Sources */,
 				046E7392284265A30024E4C1 /* Test.swift in Sources */,
 				04663A882845DDE6004DF48C /* Test2.swift in Sources */,
+				046AA86E28465BAA007AD505 /* IngredientList.swift in Sources */,
 				04CAE9ED2841DF240013965D /* DrinkDetail.swift in Sources */,
 				04CAE9E72841D46C0013965D /* Drink.swift in Sources */,
 				046E7388284203F60024E4C1 /* Home.swift in Sources */,
