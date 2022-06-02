@@ -27,19 +27,27 @@ struct DrinkDetail: View {
             SwiftUI.Text(drink.strMeasure1 + drink.strIngredient1)
 
             if drink.strIngredient2 != nil {
-                SwiftUI.Text(drink.strMeasure2!) + SwiftUI.Text(drink.strIngredient2!)
+                if drink.strMeasure2 != nil {
+                    SwiftUI.Text(drink.strMeasure2!) + SwiftUI.Text(drink.strIngredient2!)
+                }
             }
             
             if drink.strIngredient3 != nil {
-                SwiftUI.Text(drink.strMeasure3!) + SwiftUI.Text(drink.strIngredient3!)
+                if drink.strMeasure3 != nil {
+                    SwiftUI.Text(drink.strMeasure3!) + SwiftUI.Text(drink.strIngredient3!)
+                }
             }
 
             if drink.strIngredient4 != nil {
-                SwiftUI.Text(drink.strMeasure4!) + SwiftUI.Text(drink.strIngredient4!)
+                if drink.strMeasure4 != nil {
+                    SwiftUI.Text(drink.strMeasure4!) + SwiftUI.Text(drink.strIngredient4!)
+                }
             }
 
             if drink.strIngredient5 != nil {
-                SwiftUI.Text(drink.strMeasure5!) + SwiftUI.Text(drink.strIngredient5!)
+                if drink.strMeasure5 != nil {
+                    SwiftUI.Text(drink.strMeasure5!) + SwiftUI.Text(drink.strIngredient5!)
+                }
             }
             
             SwiftUI.Text("Instructions")

@@ -20,14 +20,13 @@ struct DrinkList: View {
                 }
             }
             .navigationTitle("Drink List")
-            .onAppear(){
-                viewModeldrink.fetch()
-            }
             .searchable(text: $searchText, prompt: "Find a drink")
             .onChange(of: searchText) { data in
                 viewModeldrink.search(with: data)
             }
-
+            .onAppear(){
+                viewModeldrink.fetch()
+            }
         }
     }
 }
