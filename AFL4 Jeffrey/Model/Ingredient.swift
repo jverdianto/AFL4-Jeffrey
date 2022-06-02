@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Ingredient: Hashable, Codable {
     var strIngredient1: String
+    var strDescription: String
 }
 
 struct Ingredientclass: Hashable, Codable{

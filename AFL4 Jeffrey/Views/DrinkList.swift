@@ -9,10 +9,11 @@ import SwiftUI
 
 struct DrinkList: View {
     @StateObject var viewModeldrink = ViewModelDrink()
+    @State var searchText = ""
     var body: some View {
         NavigationView {
-            List() {
-                ForEach(viewModeldrink.drink, id:\.self){ Drink in
+            List {
+                ForEach(viewModeldrink.filteredDrink, id:\.self){ Drink in
                     NavigationLink(destination: DrinkDetail(drink: Drink)) {
                         DrinkRow(drink: Drink)
                     }
@@ -21,6 +22,10 @@ struct DrinkList: View {
             .navigationTitle("Drink List")
             .onAppear(){
                 viewModeldrink.fetch()
+            }
+            .searchable(text: $searchText, prompt: "Find a drink")
+            .onChange(of: searchText) { data in
+                viewModeldrink.search(with: data)
             }
 
         }

@@ -10,9 +10,10 @@ import SwiftUI
 
 class ViewModelDrink: ObservableObject{
     @Published var drink: [Drink] = []
+    @Published var filteredDrink = [Drink]()
 
     func fetch(){
-        guard let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=c") else {
+        guard let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=s") else {
             return
         }
 
@@ -26,6 +27,7 @@ class ViewModelDrink: ObservableObject{
                 let drinks = try JSONDecoder().decode(Drinkclass.self, from: data)
                 DispatchQueue.main.async {
                     self?.drink = drinks.drinks
+                    self?.filteredDrink = drinks.drinks
                 }
                 
             }
@@ -36,10 +38,15 @@ class ViewModelDrink: ObservableObject{
         }
         task.resume()
     }
+    
+    func search(with query: String = "") {
+        filteredDrink = query.isEmpty ? drink : drink.filter { $0.strDrink.localizedStandardContains(query) }
+    }
 }
 
 class ViewModelIngredient: ObservableObject{
     @Published var ingredient: [Ingredient] = []
+    @Published var filteredIngredient = [Ingredient]()
 
     func fetch(){
         guard let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list") else {
@@ -57,7 +64,7 @@ class ViewModelIngredient: ObservableObject{
                 DispatchQueue.main.async {
                     self?.ingredient = ingredients.drinks
                 }
-                
+
             }
             catch{
 
@@ -65,5 +72,9 @@ class ViewModelIngredient: ObservableObject{
 
         }
         task.resume()
+    }
+    
+    func search(with query: String = "") {
+        filteredIngredient = query.isEmpty ? ingredient : ingredient.filter { $0.strIngredient1.localizedStandardContains(query) }
     }
 }

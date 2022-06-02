@@ -11,7 +11,21 @@ struct IngredientDetail: View {
     var ingredient: Ingredient
     
     var body: some View {
-        Text(ingredient.strIngredient1)
+        ScrollView {
+            SwiftUI.Text(ingredient.strIngredient1)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding([.leading, .bottom, .trailing, .top], 20.0)
+            
+//            SwiftUI.Text("Description")
+//                .font(.title2)
+//                .fontWeight(.bold)
+//                .padding([.top, .leading, .trailing], 20.0)
+            
+            SwiftUI.Text(ingredient.strDescription)
+                .font(.body)
+                .padding()
+        }
     }
 }
 
