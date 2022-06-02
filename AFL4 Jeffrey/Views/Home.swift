@@ -80,14 +80,16 @@ struct Home: View {
                 }
 
                 HStack{
-                    Image("Image-4")
-                        .resizable()
-                        .frame(width: 155, height: 155)
-                        .cornerRadius(5)
-                    Image("Image-5")
-                        .resizable()
-                        .frame(width: 155, height: 155)
-                        .cornerRadius(5)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(alignment: .top, spacing: 0) {
+                            ForEach(1..<9) { num in
+                                Image("Image-\(num)")
+                                    .resizable()
+                                    .frame(width: 155, height: 155)
+                                    .cornerRadius(5)
+                            }
+                        }
+                    }
                 }.padding(.bottom, 40)
                 
             }

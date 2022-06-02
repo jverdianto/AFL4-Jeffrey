@@ -8,25 +8,11 @@
 import SwiftUI
 
 struct IngredientList: View {
-    @StateObject var viewModelingredient = ViewModelIngredient()
     @State var searchText = ""
+    @State var modelDataingredient = ModelDataIngredient()
     var body: some View {
-//        NavigationView {
-//            List {
-//                ForEach(viewModelingredient.ingredient, id:\.self){ Ingredient in
-//                    NavigationLink(destination: IngredientDetail(ingredient: Ingredient)) {
-//                        Text(Ingredient.strIngredient1)
-//                    }
-//                }
-//            }
-//            .navigationTitle("Ingredient List")
-//            .onAppear(){
-//                viewModelingredient.fetch()
-//            }
-
-//        }
         NavigationView {
-            List(ingredients, id: \.self) { ingredient in
+            List(filteredIngredient, id: \.self) { ingredient in
                 NavigationLink {
                     IngredientDetail(ingredient: ingredient)
                 } label: {
@@ -36,7 +22,10 @@ struct IngredientList: View {
             .navigationTitle("Ingredient List")
             .searchable(text: $searchText, prompt: "Find an ingredient")
             .onChange(of: searchText) { data in
-                viewModelingredient.search(with: data)
+                modelDataingredient.search(with: data)
+            }
+            .onAppear(){
+                modelDataingredient.search()
             }
         }
     }

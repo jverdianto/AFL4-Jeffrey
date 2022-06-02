@@ -9,6 +9,7 @@ import Foundation
 
 var drinks: [Drink] = load("drinkData.json")
 var ingredients: [Ingredient] = load("ingredientData.json")
+var filteredIngredient = ingredients
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
@@ -29,5 +30,11 @@ func load<T: Decodable>(_ filename: String) -> T {
         return try decoder.decode(T.self, from: data)
     } catch {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+    }
+}
+
+class ModelDataIngredient {
+    func search(with query: String = "") {
+        filteredIngredient = query.isEmpty ? ingredients : ingredients.filter { $0.strIngredient1.localizedStandardContains(query) }
     }
 }

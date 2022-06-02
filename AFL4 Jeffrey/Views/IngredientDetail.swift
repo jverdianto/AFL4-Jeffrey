@@ -15,12 +15,7 @@ struct IngredientDetail: View {
             SwiftUI.Text(ingredient.strIngredient1)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding([.leading, .bottom, .trailing, .top], 20.0)
-            
-//            SwiftUI.Text("Description")
-//                .font(.title2)
-//                .fontWeight(.bold)
-//                .padding([.top, .leading, .trailing], 20.0)
+                .padding([.leading, .bottom, .trailing], 20.0)
             
             SwiftUI.Text(ingredient.strDescription)
                 .font(.body)

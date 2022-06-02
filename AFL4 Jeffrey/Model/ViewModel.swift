@@ -43,38 +43,3 @@ class ViewModelDrink: ObservableObject{
         filteredDrink = query.isEmpty ? drink : drink.filter { $0.strDrink.localizedStandardContains(query) }
     }
 }
-
-class ViewModelIngredient: ObservableObject{
-    @Published var ingredient: [Ingredient] = []
-    @Published var filteredIngredient = [Ingredient]()
-
-    func fetch(){
-        guard let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list") else {
-            return
-        }
-
-        let task = URLSession.shared.dataTask(with: url) {[weak self] data, _, error in
-            guard let data = data, error == nil else {
-                return
-            }
-
-            //Convert to JSON
-            do{
-                let ingredients = try JSONDecoder().decode(Ingredientclass.self, from: data)
-                DispatchQueue.main.async {
-                    self?.ingredient = ingredients.drinks
-                }
-
-            }
-            catch{
-
-            }
-
-        }
-        task.resume()
-    }
-    
-    func search(with query: String = "") {
-        filteredIngredient = query.isEmpty ? ingredient : ingredient.filter { $0.strIngredient1.localizedStandardContains(query) }
-    }
-}
