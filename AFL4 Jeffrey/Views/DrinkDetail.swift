@@ -24,29 +24,43 @@ struct DrinkDetail: View {
                 .fontWeight(.bold)
                 .padding(20.0)
             
-            SwiftUI.Text(drink.strMeasure1 + drink.strIngredient1)
+            if drink.strIngredient1 != nil {
+                if drink.strMeasure1 != nil {
+                    SwiftUI.Text(drink.strMeasure1!) + SwiftUI.Text(drink.strIngredient1!)
+                }else{
+                    SwiftUI.Text(drink.strIngredient1!)
+                }
+            }
 
             if drink.strIngredient2 != nil {
                 if drink.strMeasure2 != nil {
                     SwiftUI.Text(drink.strMeasure2!) + SwiftUI.Text(drink.strIngredient2!)
+                }else{
+                    SwiftUI.Text(drink.strIngredient2!)
                 }
             }
             
             if drink.strIngredient3 != nil {
                 if drink.strMeasure3 != nil {
                     SwiftUI.Text(drink.strMeasure3!) + SwiftUI.Text(drink.strIngredient3!)
+                }else{
+                    SwiftUI.Text(drink.strIngredient3!)
                 }
             }
 
             if drink.strIngredient4 != nil {
                 if drink.strMeasure4 != nil {
                     SwiftUI.Text(drink.strMeasure4!) + SwiftUI.Text(drink.strIngredient4!)
+                }else{
+                    SwiftUI.Text(drink.strIngredient4!)
                 }
             }
 
             if drink.strIngredient5 != nil {
                 if drink.strMeasure5 != nil {
                     SwiftUI.Text(drink.strMeasure5!) + SwiftUI.Text(drink.strIngredient5!)
+                }else{
+                    SwiftUI.Text(drink.strIngredient5!)
                 }
             }
             

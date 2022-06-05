@@ -13,7 +13,7 @@ class ViewModelDrink: ObservableObject{
     @Published var filteredDrink = [Drink]()
 
     func fetch(){
-        guard let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=s") else {
+        guard let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=m") else {
             return
         }
 

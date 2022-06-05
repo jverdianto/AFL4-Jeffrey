@@ -25,6 +25,7 @@ struct DrinkList: View {
                 viewModeldrink.search(with: data)
             }
             .onAppear(){
+                viewModeldrink.search()
                 viewModeldrink.fetch()
             }
         }
