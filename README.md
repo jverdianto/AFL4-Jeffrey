@@ -1,6 +1,6 @@
 # AFL4-Jeffrey
 
-Jeffrey Verdianto - 0706012010004 \n
+Jeffrey Verdianto - 0706012010004
 
 ## Demo Video
 Here's my demo video :
